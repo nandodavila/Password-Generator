@@ -10,3 +10,8 @@ Once the information needed for the password is inputed it will create a passwor
 * This prompt will be asked 3 more times, asking for Lower case, Numbers, and Special Characters
 * The password will then be randomized by adding all those charaters desired into a string.
 * The password will then be written on the page
+
+## Deployed Page
+https://nandodavila.github.io/Password-Generator/
+
+![screenshot](assets/images/passwordGeneratorIMG.PNG)
