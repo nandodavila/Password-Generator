@@ -14,9 +14,9 @@ var randomNum = num[Math.floor(Math.random() * num.length)];
 var symbols ="!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
 
-var character = [randomUpper, randomLower, randomNum, randomSymbol];
+//var character = [randomUpper, randomLower, randomNum, randomSymbol];
 function randomCharacter() {
-  character[Math.floor(Math.random() * character.length)];
+  return character[Math.floor(Math.random() * character.length)];
 }
  
 
@@ -24,31 +24,46 @@ function generatePassword() {
   var length = 0;
   while (length < 8 || length > 128) {
      length = prompt("How may characters? (8-128)");
+     console.log(length);
   if (length < 8 || length > 128) {
     alert("Please enter valid password length!");
   }}
+  //var character = [];
+  var finalPassword = "";
+  var allPossibleChar = "";
   var upConfirm = confirm("Do you want Uppercase letters? ")
-  if (upConfirm === false){
-    character.splice(0, 1)
+  if (upConfirm === true){
+    //character.push(randomUpper);
+    finalPassword += randomUpper
+    allPossibleChar = allPossibleChar + upperAlpha;
 };
   var loConfirm = confirm("Do you want Lowercase letters?")
-  if (loConfirm === false){
-    character.splice(1, 1)
+  if (loConfirm === true){
+    //character.push(randomLower);
+    finalPassword += randomLower
+    allPossibleChar = allPossibleChar + lowerAlpha;
   };
   var numConfirm = confirm("Do you want numbers??")
-  if (numConfirm === false){
-    character.splice(2, 1)
+  if (numConfirm === true){
+    //character.push(randomNum);
+    finalPassword += randomNum
+    allPossibleChar = allPossibleChar + num;
   };
   var symConfirm = confirm("Do you want special characters??")
-  if (symConfirm === false) {
-    character.splice(3, 1)
+  if (symConfirm === true) {
+    //character.push(randomSymbol);
+    finalPassword += randomSymbol
+    allPossibleChar = allPossibleChar + symbols;
   };
-  for (var i = 0; i < length; i++){
-    randomCharacter
-    if (i === length){
-      return;
-    };
+  console.log(allPossibleChar.length);
+  console.log(finalPassword.length)
+  //var finalPassword = "";
+  for (var i = finalPassword.length; i < length; i++){
+    var newLetter = allPossibleChar[Math.floor(Math.random() * allPossibleChar.length)]
+    console.log(newLetter)
+  finalPassword = finalPassword + newLetter;
   }
+  return finalPassword;
 }
 
 // Write password to the #password input
